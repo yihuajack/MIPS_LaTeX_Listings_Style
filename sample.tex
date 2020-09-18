@@ -1,0 +1,49 @@
+\documentclass[a4paper]{article}
+\usepackage{DejaVuSansMono,listings,mips,xcolor}
+% Here we use font Deja Vu Sans Mono as an example
+% Note that the alternative package "dejavu" loads the DejaVu Serif and DejaVu Sans fonts as well
+% Just use "DejaVuSansMono" for listings which will not affect the whole document
+% while using "dejavu" will affect the whole document for this configuration
+% More font types see reference https://www.tug.org/FontCatalogue/
+% ("\ttfamily fonts" in section "Typewriter Fonts")
+% and https://www.ctan.org/tex-archive/fonts
+% For Source Code Pro:
+% \usepackage[default]{sourcecodepro}
+% The command "\usepackage[T1]{fontenc}" is usually unnecessary
+% To define colors you can use commands like
+% \definecolor{codegreen}{rgb}{0,0.6,0}
+% \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+% \definecolor{codepurple}{rgb}{0.58,0,0.82}
+% \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+% Here our color configuration is based on Visual Studio Code coloring style
+% (numbers and punctuations coloring requires extra configuration which is complex and unnecessary)
+\lstdefinestyle{samplestyle}{
+    backgroundcolor=\color[RGB]{245,245,244},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    columns=fixed,
+    commentstyle=\it\color[RGB]{127,132,142},
+    frame=single,
+    keywordstyle=[1]\color[RGB]{86,182,194},
+    keywordstyle=[2]\color[RGB]{198,120,221},
+    keywordstyle=[3]\color[RGB]{224,108,117},
+    numbers=left,
+    numberstyle=\tiny,
+    rulecolor=\color{black},
+    stringstyle=color[RGB]{152,195,121},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    title=\lstname
+}
+\lstset{style=samplestyle}  % or you can directly put the configuration lines in \lstdefinestyle{mips}{} here in \lstset{}.
+\begin{document}
+\begin{lstlisting}[language={[mips]Assembler}]
+addi $t0,$s2,-72
+\end{lstlisting}
+% Alternatively you can use
+% \lstinputlisting[language={[mips]Assembler}]{1-4.s}
+\end{document}
